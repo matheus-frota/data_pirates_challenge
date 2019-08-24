@@ -11,6 +11,9 @@ def gerador_links():
 
     links = []
 
+    qtd_film = [x+1 for x in range(0,500,50)]
+    print(qtd_film)
+
     # Solicitação HTTP
     req = requests.get(url_)
 
@@ -26,11 +29,32 @@ def gerador_links():
         for link in page:
             if link.get("href").count("/search/title/?genres=action&genres=") == 1:
                 links.append(url+link.get("href"))
+        print(links)
         print("Todos os links foram coletados!")
 
-        return links
     else:
         print("{}".format(req.status_code))
 
 
-links = gerador_links()
+def info():
+    links = gerador_links()
+    
+    for link in links:
+        print(link)
+        # Solicitando acesso
+        req = requests.get(link)
+
+        if req.status_code == 200:
+            content = req.content
+            soup = BeautifulSoup(content, 'html.parser')
+            i = 0
+            # Iterando por div do filme
+            for container in soup.find_all("div", class_="lister-item-content"):
+                print(container.find("h3").text.split("\n"))
+                print(container.find("p").text.split("\n"))
+                print(container.select("div > strong"))
+        else:
+            print("{}".format(req.status_code))
+        break
+    
+gerador_links()
