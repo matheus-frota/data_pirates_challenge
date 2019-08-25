@@ -5,3 +5,6 @@ version:
 
 install:
  - make install
+
+script:
+ - make test
