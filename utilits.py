@@ -31,7 +31,7 @@ def gerador_links():
                 links.append(url+link.get("href"))
         print(links)
         print("Todos os links foram coletados!")
-
+        return links
     else:
         print("{}".format(req.status_code))
 
@@ -57,4 +57,4 @@ def info():
             print("{}".format(req.status_code))
         break
     
-gerador_links()
+
