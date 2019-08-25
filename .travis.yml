@@ -6,5 +6,4 @@ version:
 install:
  - make install
 
-script:
- - make test
+script: ./run_build.sh
