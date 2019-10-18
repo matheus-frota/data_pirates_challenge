@@ -5,19 +5,20 @@ Desafio neoway
 
 # Objetivos
 
-O objetivo desse projeto é puxar informações do site imdb de 500 filmes de cada gênero e salvar em formato .json, ordenados por 	IMDb Rating.
+O objetivo desse projeto é requisitar informações do site IMDb de 500 títulos divididos por gênero e ordená-los por rating, além de salvar em formato .json as informações.
 
 Link do desafio: [Data-Pirates Neoway](https://github.com/NeowayLabs/jobs/blob/master/datapirates/challenge.md)
 
 # Requisitos
 
 * Docker
-* Make
+
+É necessário a execução em um ambiente linux, por conta do Makefile.
 
 # Execução
 
 Para executar a aplicação, basta:
 
-Primeiro - make build (Prepara o ambiente para execução ddo aplicativo - Constroi a imagem)
+Primeiro - make build (Prepara o ambiente para execução do aplicativo - Constroi a imagem)
 
 Segundo - make run (Roda a aplicação)
